@@ -1,0 +1,8 @@
+#!/bin/ksh
+
+if [ $# = 0 ] ; then
+  echo "USAGE:  superate nemo_occigen.o_file"
+  exit
+fi
+
+rate.ksh -s 250 -b 1 -f $1
