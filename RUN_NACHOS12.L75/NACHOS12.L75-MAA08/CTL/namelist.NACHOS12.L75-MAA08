@@ -41,7 +41,7 @@
    cn_ocerst_out = "restart" !  suffix of ocean restart name (output)
    cn_ocerst_outdir = "CN_DIRRST"      !  directory in which to write output ocean restarts
    ln_iscpl    = .false.   !  cavity evolution forcing or coupling to ice sheet model
-   nn_istate   =      1      !  output the initial state (1) or not (0)
+   nn_istate   =      0    !  output the initial state (1) or not (0)
    ln_rst_list = .false.   !  output restarts at list of times using nn_stocklist (T) or at set frequency with nn_stock (F)
    nn_stock    =    0      !  frequency of creation of a restart file (modulo referenced to 1)
    nn_stocklist = 0,0,0,0,0,0,0,0,0,0 ! List of timesteps when a restart file is to be written
@@ -139,7 +139,7 @@
    rn_e3zps_rat=    0.2    !  rn_e3zps_min and rn_e3zps_rat*e3t, with 0<rn_e3zps_rat<1
                            !
 !  rn_rdt      = 4800.     !  time step for the dynamics (and tracer if nn_acc=0)
-   rn_rdt      = 360.       !  time step for the dynamics (and tracer if nn_acc=0)
+   rn_rdt      = 480.       !  time step for the dynamics (and tracer if nn_acc=0)
    rn_atfp     =    0.1    !  asselin time filter parameter
    ln_crs      = .false.      !  Logical switch for coarsening module
    jphgr_msh   =       0               !  type of horizontal mesh
@@ -181,11 +181,11 @@
 !          ! file name !                       frequency (hours)    ! variable ! time interp. ! clim  !'yearly' or ! weights           ! rotation !  land/sea mask !
 !          !                                 !  (if <0  months)     !   name   !  (logical)   ! (T/F) ! 'monthly'  ! filename          ! pairing  !  filename      !
    ! data used for initial condition (istate)
-   sn_tem_ini  = 'vertext_clean_drowned_GLORYS2V4_NACHOS025_2010_gridT' , -1      ,'votemper',  .true.      , .true., 'yearly'   , 'wght_bilinear_NACHOS12_pseudo_coord.nc' , ' ',' '
-   sn_sal_ini  = 'vertext_clean_drowned_GLORYS2V4_NACHOS025_2010_gridS' , -1      ,'vosaline',  .true.      , .true., 'yearly'   , 'wght_bilinear_NACHOS12_pseudo_coord.nc' , ' ',' '
+   sn_tem_ini  = 'vertext_clean_drowned_GLORYS2V4_NACHOS025_gridT_y2010' , -1      ,'votemper',  .true.      , .true., 'yearly'   , 'wght_bilinear_NACHOS12_pseudo_coord.nc' , ' ',' '
+   sn_sal_ini  = 'vertext_clean_drowned_GLORYS2V4_NACHOS025_gridS_y2010' , -1      ,'vosaline',  .true.      , .true., 'yearly'   , 'wght_bilinear_NACHOS12_pseudo_coord.nc' , ' ',' '
    ! data used for damping ( tradmp)
-   sn_tem_dmp  = 'vertext_clean_drowned_GLORYS2V3_NACHOS025_2010_gridT' , -1      ,'votemper',  .true.      , .true., 'yearly'   , 'wght_bilinear_NACHOS12_pseudo_coord.nc' , ' ',' '
-   sn_sal_dmp  = 'vertext_clean_drowned_GLORYS2V3_NACHOS025_2010_gridS' , -1      ,'vosaline',  .true.      , .true., 'yearly'   , 'wght_bilinear_NACHOS12_pseudo_coord.nc' , ' ',' '
+   sn_tem_dmp  = 'vertext_clean_drowned_GLORYS2V4_NACHOS025_gridT' , -1      ,'votemper',  .true.      , .false., 'yearly'   , 'wght_bilinear_NACHOS12_pseudo_coord.nc' , ' ',' '
+   sn_sal_dmp  = 'vertext_clean_drowned_GLORYS2V4_NACHOS025_gridS' , -1      ,'vosaline',  .true.      , .false., 'yearly'   , 'wght_bilinear_NACHOS12_pseudo_coord.nc' , ' ',' '
    !
    cn_dir        = './'     !  root directory for the location of the temperature and salinity file
    ln_tsd_init   = .true.   !  Initialisation of ocean T & S with T &S input data (T) or not (F)
@@ -525,7 +525,7 @@ sn_rcv_co2    =       'coupled'              ,    'no'    ,     ''      ,       
 !              !  file name              ! frequency (hours) ! variable  ! time interp. !  clim  ! 'yearly'/ ! weights  ! rotation !  land/sea mask !
 !              !                         !  (if <0  months)  !   name    !   (logical)  !  (T/F) ! 'monthly' ! filename ! pairing  !  filename      !
    sn_sst      =    ' '             ,        24         ,  'sst'     ,     .false.    , .false. ,  'yearly'   , ''       , '', ''
-   sn_sss      =    'EN4.1.1_75L_monthly_19952014_reg1d_sss_noz',  -1 ,  'vosaline' ,  .true.    , .true.  , 'yearly'  , 'NACHOS12.L75_EN4.1.1f_reg_sss_weights_bilin.nc'       , '', ''
+   sn_sss      =    'vertext_clean_drowned_GLORYS2V4_NACHOS025_SSS_nodepth',  -1 ,  'vosaline' ,  .true.    , .false.  , 'yearly'  , 'wght_DFS5_NACHOS12.L75_bilin_2d.nc'       , '', ''
 
    cn_dir      = './'      !  root directory for the location of the runoff files
    nn_sstr     =     0     !  add a retroaction term in the surface heat       flux (=1) or not (=0)
@@ -713,13 +713,13 @@ sn_rcv_co2    =       'coupled'              ,    'no'    ,     ''      ,       
 !-----------------------------------------------------------------------
 !              !  file name      ! frequency (hours) ! variable   ! time interp.   !  clim   ! 'yearly'/ ! weights  ! rotation ! land/sea mask !
 !              !                 !  (if <0  months)  !   name     !   (logical)    !  (T/F ) ! 'monthly' ! filename ! pairing  ! filename      !
-   bn_ssh =     'GLORYS2V3-NACHOS12.L75_SbdySSH' , -1      , 'sossheig' ,     .true.     , .false. ,  'yearly'  ,    ''    ,   ''     , ''
-   bn_u3d  =    'GLORYS2V3-NACHOS12.L75_SbdyU'  , -1      , 'vozocrtx' ,     .true.     , .false. ,  'yearly'  ,    ''    ,   ''     , ''
-   bn_u2d  =    'GLORYS2V3-NACHOS12.L75_SbdyU'  , -1      , 'vobtcrtx' ,     .true.     , .false. ,  'yearly'  ,    ''    ,   ''     , ''
-   bn_v3d  =    'GLORYS2V3-NACHOS12.L75_SbdyV'  , -1      , 'vomecrty' ,     .true.     , .false. ,  'yearly'  ,    ''    ,   ''     , ''
-   bn_v2d  =    'GLORYS2V3-NACHOS12.L75_SbdyV'  , -1      , 'vobtcrty' ,     .true.     , .false. ,  'yearly'  ,    ''    ,   ''     , ''
-   bn_tem  =    'GLORYS2V3-NACHOS12.L75_SbdyT' , -1      , 'votemper' ,     .true.     , .false. ,  'yearly'  ,    ''    ,   ''     , ''
-   bn_sal  =    'GLORYS2V3-NACHOS12.L75_SbdyS' , -1      , 'vosaline' ,     .true.     , .false. ,  'yearly'  ,    ''    ,   ''     , ''
+   bn_ssh =     'GLORYS2V4-NACHOS12.L75_SbdySSH' , -1      , 'sossheig' ,     .true.     , .false. ,  'yearly'  ,    ''    ,   ''     , ''
+   bn_u3d  =    'GLORYS2V4-NACHOS12.L75_SbdyU'  , -1      , 'vozocrtx' ,     .true.     , .false. ,  'yearly'  ,    ''    ,   ''     , ''
+   bn_u2d  =    'GLORYS2V4-NACHOS12.L75_SbdyU'  , -1      , 'vobtcrtx' ,     .true.     , .false. ,  'yearly'  ,    ''    ,   ''     , ''
+   bn_v3d  =    'GLORYS2V4-NACHOS12.L75_SbdyV'  , -1      , 'vomecrty' ,     .true.     , .false. ,  'yearly'  ,    ''    ,   ''     , ''
+   bn_v2d  =    'GLORYS2V4-NACHOS12.L75_SbdyV'  , -1      , 'vobtcrty' ,     .true.     , .false. ,  'yearly'  ,    ''    ,   ''     , ''
+   bn_tem  =    'GLORYS2V4-NACHOS12.L75_SbdyT' , -1      , 'votemper' ,     .true.     , .false. ,  'yearly'  ,    ''    ,   ''     , ''
+   bn_sal  =    'GLORYS2V4-NACHOS12.L75_SbdyS' , -1      , 'vosaline' ,     .true.     , .false. ,  'yearly'  ,    ''    ,   ''     , ''
    cn_dir  =    './'
    ln_full_vel = .true.
 /
@@ -728,13 +728,13 @@ sn_rcv_co2    =       'coupled'              ,    'no'    ,     ''      ,       
 !-----------------------------------------------------------------------
 !              !  file name      ! frequency (hours) ! variable   ! time interp.   !  clim   ! 'yearly'/ ! weights  ! rotation ! land/sea mask !
 !              !                 !  (if <0  months)  !   name     !   (logical)    !  (T/F ) ! 'monthly' ! filename ! pairing  ! filename      !
-   bn_ssh =     'GLORYS2V3-NACHOS12.L75_NbdySSH' , -1     , 'sossheig' ,     .true.     , .false. ,  'yearly'  ,    ''    ,   ''     , ''
-   bn_u3d  =    'GLORYS2V3-NACHOS12.L75_NbdyU'  , -1      , 'vozocrtx' ,     .true.     , .false. ,  'yearly'  ,    ''    ,   ''     , ''
-   bn_u2d  =    'GLORYS2V3-NACHOS12.L75_NbdyU'  , -1      , 'vobtcrtx' ,     .true.     , .false. ,  'yearly'  ,    ''    ,   ''     , ''
-   bn_v3d  =    'GLORYS2V3-NACHOS12.L75_NbdyV'  , -1      , 'vomecrty' ,     .true.     , .false. ,  'yearly'  ,    ''    ,   ''     , ''
-   bn_v2d  =    'GLORYS2V3-NACHOS12.L75_NbdyV'  , -1      , 'vobtcrty' ,     .true.     , .false. ,  'yearly'  ,    ''    ,   ''     , ''
-   bn_tem  =    'GLORYS2V3-NACHOS12.L75_NbdyT' , -1      , 'votemper' ,     .true.     , .false. ,  'yearly'  ,    ''    ,   ''     , ''
-   bn_sal  =    'GLORYS2V3-NACHOS12.L75_NbdyS' , -1      , 'vosaline' ,     .true.     , .false. ,  'yearly'  ,    ''    ,   ''     , ''
+   bn_ssh =     'GLORYS2V4-NACHOS12.L75_NbdySSH' , -1     , 'sossheig' ,     .true.     , .false. ,  'yearly'  ,    ''    ,   ''     , ''
+   bn_u3d  =    'GLORYS2V4-NACHOS12.L75_NbdyU'  , -1      , 'vozocrtx' ,     .true.     , .false. ,  'yearly'  ,    ''    ,   ''     , ''
+   bn_u2d  =    'GLORYS2V4-NACHOS12.L75_NbdyU'  , -1      , 'vobtcrtx' ,     .true.     , .false. ,  'yearly'  ,    ''    ,   ''     , ''
+   bn_v3d  =    'GLORYS2V4-NACHOS12.L75_NbdyV'  , -1      , 'vomecrty' ,     .true.     , .false. ,  'yearly'  ,    ''    ,   ''     , ''
+   bn_v2d  =    'GLORYS2V4-NACHOS12.L75_NbdyV'  , -1      , 'vobtcrty' ,     .true.     , .false. ,  'yearly'  ,    ''    ,   ''     , ''
+   bn_tem  =    'GLORYS2V4-NACHOS12.L75_NbdyT' , -1      , 'votemper' ,     .true.     , .false. ,  'yearly'  ,    ''    ,   ''     , ''
+   bn_sal  =    'GLORYS2V4-NACHOS12.L75_NbdyS' , -1      , 'vosaline' ,     .true.     , .false. ,  'yearly'  ,    ''    ,   ''     , ''
    cn_dir  =    './'
    ln_full_vel = .true.
 /

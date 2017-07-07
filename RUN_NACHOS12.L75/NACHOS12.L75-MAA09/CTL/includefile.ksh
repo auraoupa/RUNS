@@ -19,7 +19,7 @@ set -x
 #########################################################################
 
  CONFIG=NACHOS12.L75
- CASE=MAA08
+ CASE=MAA09
  CONFIG_CASE=${CONFIG}-${CASE}
 
 # Environmemt and miscelaneous

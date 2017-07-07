@@ -18,7 +18,7 @@ ulimit -s unlimited
 # vmstat -t 15 > $WORKDIR/vmstatlog &
 
 CONFIG=NACHOS12.L75
-CASE=MAA08
+CASE=MAA09
 
 CONFCASE=${CONFIG}-${CASE}
 CTL_DIR=$PDIR/RUN_${CONFIG}/${CONFCASE}/CTL

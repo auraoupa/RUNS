@@ -11,15 +11,15 @@
       . /scratch/cnt0024/hmg2840/albert7a/DEV/RUN_TOOLS/function_3.2.ksh
       . /scratch/cnt0024/hmg2840/albert7a/DEV/RUN_TOOLS/function_3.2_all.ksh
          DDIR=/scratch/cnt0024/hmg2840/albert7a
-         zXIOS=/scratch/cnt0024/hmg2840/albert7a/NACHOS12.L75-MAA07-XIOS.1
-         WKDIR=$zXIOS/WRK.19898
+         zXIOS=/scratch/cnt0024/hmg2840/albert7a/NACHOS12.L75-MAA08-XIOS.1
+         WKDIR=$zXIOS/WRK.13483
          mkdir -p $WKDIR
          cd $WKDIR
          mergeprog=mergefile_mpp4.exe
          # link all files in all member in a single dir
          for member in $(seq  -1 -1 ) ; do
             nnn=$(getmember_extension $member nodot)
-            ln -sf $zXIOS/$nnn/NACHOS12.L75-MAA07*.nc ./
+            ln -sf $zXIOS/$nnn/NACHOS12.L75-MAA08*.nc ./
          done
          ln -sf  $zXIOS/coordinates.nc ./
          ln -sf /scratch/cnt0024/hmg2840/albert7a/bin/mergefile_mpp4.exe ./
