@@ -1,0 +1,309 @@
+(load) netcdf seq 4.1.3
+(load) nco version 4.4.2
+(load) ncview version 2.1.2
+(load) ncar version 6.1
+(load) hdf5 seq 1.8.9
+	------------------------------------------------
+	Loading the NEMODRAK 4.0 environment 
+	------------------------------------------------
+
++ cd /workgpfs/rech/ote/rote001/TMPDIR_NACHOS12.L75-GADA03
++ . ./includefile.ksh
+++ date
+Wed Jul 12 16:57:41 CEST 2017
+++ set -x
+++ UBAR_TIDE=0
+++ WAFDMP=0
+++ RST_SKIP=1
+++ RST_DIRS=1
+++ RST_READY=1
+++ CONFIG=NACHOS12.L75
+++ CASE=GADA03
+++ CONFIG_CASE=NACHOS12.L75-GADA03
+++ login_node=node
+++ MAILT=aurelie.albert@univ-grenoble-alpes.fr
+++ ACCOUNT=none
+++ QUEUE=none
+++ TMPDIR=/workgpfs/rech/ote/rote001/TMPDIR_NACHOS12.L75-GADA03
+++ SUBMIT_SCRIPT=NACHOS12.L75-GADA03_ada.ksh
+++ '[' '!' -d /workgpfs/rech/ote/rote001/TMPDIR_NACHOS12.L75-GADA03 ']'
+++ F_S_DIR=/workgpfs/rech/ote/rote001/NACHOS12.L75/NACHOS12.L75-GADA03-S
+++ F_R_DIR=/workgpfs/rech/ote/rote001/NACHOS12.L75/NACHOS12.L75-GADA03-R
+++ F_I_DIR=/workgpfs/rech/ote/rote001/NACHOS12.L75/NACHOS12.L75-I
+++ F_DTA_DIR=/workgpfs/rech/ote/rote001/NACHOS12.L75/NACHOS12.L75-I
+++ F_FOR_DIR=/workgpfs/rech/ote/rote001/DATA_FORCING/DFS5.2_RD/ALL
+++ F_OBC_DIR=/workgpfs/rech/ote/rote001/NACHOS12.L75/NACHOS12.L75-I/OBC
+++ F_BDY_DIR=/workgpfs/rech/ote/rote001/NACHOS12.L75/NACHOS12.L75-I/BDY
+++ F_MASK_DIR=/workgpfs/rech/ote/rote001/NACHOS12.L75/NACHOS12.L75-I/MASK
+++ F_INI_DIR=/workgpfs/rech/ote/rote001/NACHOS12.L75/NACHOS12.L75-I/
+++ F_WEI_DIR=/workgpfs/rech/ote/rote001/NACHOS12.L75/NACHOS12.L75-I/
+++ F_OBS_DIR=/ccc/work/cont003/drakkar/drakkar
+++ F_ENA_DIR=/ENACT-ENS
+++ F_SLA_DIR=/j2
+++ P_S_DIR=/workgpfs/rech/ote/rote001/NACHOS12.L75/NACHOS12.L75-GADA03-S
+++ P_R_DIR=/workgpfs/rech/ote/rote001/NACHOS12.L75/NACHOS12.L75-GADA03-R
+++ P_I_DIR=/workgpfs/rech/ote/rote001/NACHOS12.L75/NACHOS12.L75-I
+++ P_DTA_DIR=/workgpfs/rech/ote/rote001/NACHOS12.L75/NACHOS12.L75-I
+++ P_FOR_DIR=/workgpfs/rech/ote/rote001//DATA_FORCING/DFS5.2_RD/ALL
+++ P_OBC_DIR=/workgpfs/rech/ote/rote001/NACHOS12.L75/NACHOS12.L75-I/OBC
+++ P_BDY_DIR=/workgpfs/rech/ote/rote001/NACHOS12.L75/NACHOS12.L75-I/BDY
+++ P_WEI_DIR=/workgpfs/rech/ote/rote001/NACHOS12.L75/NACHOS12.L75-I/
+++ P_CTL_DIR=/linkhome/rech/ote/rote001/RUNS/RUN_NACHOS12.L75/NACHOS12.L75-GADA03/CTL
+++ P_CDF_DIR=/linkhome/rech/ote/rote001/RUNS/RUN_NACHOS12.L75/NACHOS12.L75-GADA03/CTL/CDF
+++ P_EXE_DIR=/linkhome/rech/ote/rote001/RUNS/RUN_NACHOS12.L75/NACHOS12.L75-GADA03/EXE
+++ P_UTL_DIR=/workgpfs/rech/ote/rote001
+++ P_XIOS_DIR=/workgpfs/rech/ote/rote001/DEV/xios_2.0_rev_924
+++ P_OBS_DIR=/ccc/work/cont003/drakkar/drakkar
+++ P_ENA_DIR=/ccc/work/cont003/drakkar/drakkar/ENACT-ENS
+++ P_SLA_DIR=/ccc/work/cont003/drakkar/drakkar/j2
+++ RUNTOOLS=/workgpfs/rech/ote/rote001/DEV/RUN_TOOLS
+++ EXEC=/linkhome/rech/ote/rote001/RUNS/RUN_NACHOS12.L75/NACHOS12.L75-GADA03/EXE/opa
+++ XIOS_EXEC=/workgpfs/rech/ote/rote001/DEV/xios_2.0_rev_924/bin/xios_server.exe
+++ MERGE_EXEC=/workgpfs/rech/ote/rote001/bin/mergefile_mpp4.exe
+++ BATFILE_LEVEL=
+++ OPA_BATFILE_LEVEL=bathy_level.nc
+++ BATFILE_METER=NACHOS12.L75_bathymetry_20S_80N_nfrontiercleaned_repeat3_retouchbalt.nc
+++ OPA_BATFILE_METER=bathy_meter.nc
+++ COORDINATES=NACHOS12.L75_coordinates_20S_80N_v2.0.nc
+++ OPA_COORDINATES=coordinates.nc
+++ ICEINI=
+++ OPA_ICEINI=Ice_initialization.nc
+++ ICEDMP=
+++ OPA_ICEDMP=ice_damping.nc
+++ BFR=NACHOS12.L75_bfr2d_UKmod.nc
+++ OPA_BFR=bfr_coef.nc
+++ WDMP=NACHOS12.L75_dmp_mask.nc
+++ OPA_WDMP=dmp_mask.nc
+++ AHM2D=
+++ OPA_AHM2D=ahmcoef
+++ GEO=Goutorbe_ghflux.nc
+++ OPA_GEO=geothermal_heating.nc
+++ CFC=
+++ OPA_CFC=cfc1112.atm
+++ CO2=
+++ OPA_CO2=splco2.dat
+++ C14=
+++ OPA_C14=c14.dat
+++ WAFDMP_CLIM=
+++ OPA_WAFDMP_CLIM=wdmp_from_MJM95.nc
+++ OBCFILE=obc_ORCA025.L75-G70
+++ WESTOBC=xxx
+++ EASTOBC=xxx
+++ NORTHOBC=obc_ORCA025.L75-G70_north
+++ SOUTHOBC=xxx
+++ AGRIF_FIXED_GRID=AGRIF_FixedGrids.in
+++ OPA_AGRIF_FIXED_GRID=AGRIF_FixedGrids.in
+++ MAXSUB=1
++ . /workgpfs/rech/ote/rote001/DEV/RUN_TOOLS/function_3.2_all.ksh
++ . /workgpfs/rech/ote/rote001/DEV/RUN_TOOLS/function_3.2.ksh
++ srcbash
++ echo
++ ext=1
++ AGRIF=0
++ XIOS=1
++ DIMGOUT=0
++ RST_DIRS=1
++ nst_lst=' '
++ mpmd_arg=
+++ seq -1 -1
++ for member in '$(seq -1 -1)'
+++ getmember_extension -1
+++ '[' -1 = -1 ']'
+++ echo ''
++ mmm=
+++ getmember_extension -1 nodot
+++ '[' -1 = -1 ']'
+++ echo ''
++ nnn=
++ zrstdir=./
++ '[' 1 = 1 ']'
++ zrstdir=/workgpfs/rech/ote/rote001/NACHOS12.L75-GADA03-RST.1/
++ cat
++ cat ztmp
++ sed -e 's/@/$/g'
++ chmod 755 ./zsrst.1.ksh.ksh
++ mpmd_arg=' 1 ./zsrst.1.ksh.ksh'
++ pwd
+/workgpfs/rech/ote/rote001/TMPDIR_NACHOS12.L75-GADA03
++ '[' '!' ']'
++ ./zsrst.1.ksh.ksh
++ . ./includefile.ksh
++ date
+Wed Jul 12 16:57:41 CEST 2017
++ set -x
++ UBAR_TIDE=0
++ WAFDMP=0
++ RST_SKIP=1
++ RST_DIRS=1
++ RST_READY=1
++ CONFIG=NACHOS12.L75
++ CASE=GADA03
++ CONFIG_CASE=NACHOS12.L75-GADA03
++ login_node=node
++ MAILT=aurelie.albert@univ-grenoble-alpes.fr
++ ACCOUNT=none
++ QUEUE=none
++ TMPDIR=/workgpfs/rech/ote/rote001/TMPDIR_NACHOS12.L75-GADA03
++ SUBMIT_SCRIPT=NACHOS12.L75-GADA03_ada.ksh
++ [ ! -d /workgpfs/rech/ote/rote001/TMPDIR_NACHOS12.L75-GADA03 ]
++ F_S_DIR=/workgpfs/rech/ote/rote001/NACHOS12.L75/NACHOS12.L75-GADA03-S
++ F_R_DIR=/workgpfs/rech/ote/rote001/NACHOS12.L75/NACHOS12.L75-GADA03-R
++ F_I_DIR=/workgpfs/rech/ote/rote001/NACHOS12.L75/NACHOS12.L75-I
++ F_DTA_DIR=/workgpfs/rech/ote/rote001/NACHOS12.L75/NACHOS12.L75-I
++ F_FOR_DIR=/workgpfs/rech/ote/rote001/DATA_FORCING/DFS5.2_RD/ALL
++ F_OBC_DIR=/workgpfs/rech/ote/rote001/NACHOS12.L75/NACHOS12.L75-I/OBC
++ F_BDY_DIR=/workgpfs/rech/ote/rote001/NACHOS12.L75/NACHOS12.L75-I/BDY
++ F_MASK_DIR=/workgpfs/rech/ote/rote001/NACHOS12.L75/NACHOS12.L75-I/MASK
++ F_INI_DIR=/workgpfs/rech/ote/rote001/NACHOS12.L75/NACHOS12.L75-I/
++ F_WEI_DIR=/workgpfs/rech/ote/rote001/NACHOS12.L75/NACHOS12.L75-I/
++ F_OBS_DIR=/ccc/work/cont003/drakkar/drakkar
++ F_ENA_DIR=/ENACT-ENS
++ F_SLA_DIR=/j2
++ P_S_DIR=/workgpfs/rech/ote/rote001/NACHOS12.L75/NACHOS12.L75-GADA03-S
++ P_R_DIR=/workgpfs/rech/ote/rote001/NACHOS12.L75/NACHOS12.L75-GADA03-R
++ P_I_DIR=/workgpfs/rech/ote/rote001/NACHOS12.L75/NACHOS12.L75-I
++ P_DTA_DIR=/workgpfs/rech/ote/rote001/NACHOS12.L75/NACHOS12.L75-I
++ P_FOR_DIR=/workgpfs/rech/ote/rote001//DATA_FORCING/DFS5.2_RD/ALL
++ P_OBC_DIR=/workgpfs/rech/ote/rote001/NACHOS12.L75/NACHOS12.L75-I/OBC
++ P_BDY_DIR=/workgpfs/rech/ote/rote001/NACHOS12.L75/NACHOS12.L75-I/BDY
++ P_WEI_DIR=/workgpfs/rech/ote/rote001/NACHOS12.L75/NACHOS12.L75-I/
++ P_CTL_DIR=/linkhome/rech/ote/rote001/RUNS/RUN_NACHOS12.L75/NACHOS12.L75-GADA03/CTL
++ P_CDF_DIR=/linkhome/rech/ote/rote001/RUNS/RUN_NACHOS12.L75/NACHOS12.L75-GADA03/CTL/CDF
++ P_EXE_DIR=/linkhome/rech/ote/rote001/RUNS/RUN_NACHOS12.L75/NACHOS12.L75-GADA03/EXE
++ P_UTL_DIR=/workgpfs/rech/ote/rote001
++ P_XIOS_DIR=/workgpfs/rech/ote/rote001/DEV/xios_2.0_rev_924
++ P_OBS_DIR=/ccc/work/cont003/drakkar/drakkar
++ P_ENA_DIR=/ccc/work/cont003/drakkar/drakkar/ENACT-ENS
++ P_SLA_DIR=/ccc/work/cont003/drakkar/drakkar/j2
++ RUNTOOLS=/workgpfs/rech/ote/rote001/DEV/RUN_TOOLS
++ EXEC=/linkhome/rech/ote/rote001/RUNS/RUN_NACHOS12.L75/NACHOS12.L75-GADA03/EXE/opa
++ XIOS_EXEC=/workgpfs/rech/ote/rote001/DEV/xios_2.0_rev_924/bin/xios_server.exe
++ MERGE_EXEC=/workgpfs/rech/ote/rote001/bin/mergefile_mpp4.exe
++ BATFILE_LEVEL=''
++ OPA_BATFILE_LEVEL=bathy_level.nc
++ BATFILE_METER=NACHOS12.L75_bathymetry_20S_80N_nfrontiercleaned_repeat3_retouchbalt.nc
++ OPA_BATFILE_METER=bathy_meter.nc
++ COORDINATES=NACHOS12.L75_coordinates_20S_80N_v2.0.nc
++ OPA_COORDINATES=coordinates.nc
++ ICEINI=''
++ OPA_ICEINI=Ice_initialization.nc
++ ICEDMP=''
++ OPA_ICEDMP=ice_damping.nc
++ BFR=NACHOS12.L75_bfr2d_UKmod.nc
++ OPA_BFR=bfr_coef.nc
++ WDMP=NACHOS12.L75_dmp_mask.nc
++ OPA_WDMP=dmp_mask.nc
++ AHM2D=''
++ OPA_AHM2D=ahmcoef
++ GEO=Goutorbe_ghflux.nc
++ OPA_GEO=geothermal_heating.nc
++ CFC=''
++ OPA_CFC=cfc1112.atm
++ CO2=''
++ OPA_CO2=splco2.dat
++ C14=''
++ OPA_C14=c14.dat
++ WAFDMP_CLIM=''
++ OPA_WAFDMP_CLIM=wdmp_from_MJM95.nc
++ OBCFILE=obc_ORCA025.L75-G70
++ WESTOBC=xxx
++ EASTOBC=xxx
++ NORTHOBC=obc_ORCA025.L75-G70_north
++ SOUTHOBC=xxx
++ AGRIF_FIXED_GRID=AGRIF_FixedGrids.in
++ OPA_AGRIF_FIXED_GRID=AGRIF_FixedGrids.in
++ MAXSUB=1
++ . /workgpfs/rech/ote/rote001/DEV/RUN_TOOLS/function_3.2_all.ksh
++ . /workgpfs/rech/ote/rote001/DEV/RUN_TOOLS/function_3.2.ksh
++ ext=1
++ AGRIF=0
++ XIOS=1
++ DIMGOUT=0
++ nst_lst=' '
++ mmm=''
++ zrstdir=/workgpfs/rech/ote/rote001/NACHOS12.L75-GADA03-RST.1/
++ LookInNamelist cn_ocerst_in namelist_oce.1
++ [ 2 '=' 2 ]
++ znamelist=namelist_oce.1
++ tr -d $'\''
++ eval grep -e cn_ocerst_in namelist_oce.1
++ grep -e cn_ocerst_in namelist_oce.1
++ tr -d '"'
++ awk ' {if ( $1 == str ) print $3 }' str=cn_ocerst_in
++ sed -e 's/=/  = /'
++ OCE_RST_IN=restart
++ LookInNamelist cn_ocerst_out namelist_oce.1
++ [ 2 '=' 2 ]
++ znamelist=namelist_oce.1
++ eval grep -e cn_ocerst_out namelist_oce.1
++ grep -e cn_ocerst_out namelist_oce.1
++ tr -d $'\''
++ tr -d '"'
++ awk ' {if ( $1 == str ) print $3 }' str=cn_ocerst_out
++ sed -e 's/=/  = /'
++ OCE_RST_OUT=restart
++ mktarrst restart restart _oce_v2
++ echo '   *** making tar restart file for restart_oce_v2 '
+   *** making tar restart file for restart_oce_v2 
++ MAXTARSIZ=40000000000
+ end of restart tarfiles .
++ [ 0 '=' 1 ]
++ cd -
+/workgpfs/rech/ote/rote001/TMPDIR_NACHOS12.L75-GADA03
++ cd /workgpfs/rech/ote/rote001/NACHOS12.L75/NACHOS12.L75-GADA03-R
++ expatrie_res restart_oce_v2.1.tar.1 /workgpfs/rech/ote/rote001/NACHOS12.L75/NACHOS12.L75-GADA03-R restart_oce_v2.1.tar.1 /workgpfs/rech/ote/rote001/NACHOS12.L75/NACHOS12.L75-GADA03-R
++ mfput restart_oce_v2.1.tar.1 /workgpfs/rech/ote/rote001/NACHOS12.L75/NACHOS12.L75-GADA03-R/restart_oce_v2.1.tar.1
+ mkdir /workgpfs : Permission denied 
+
+
+I - Your file has been saved in : /tmpgpfs2/MF/rote001/restart_oce_v2.1.tar.1.ada333.0712_165925_18921
+I - Please contact IDRIS User Support for more information.
+
++ [ 0 '=' 1 ]
++ cd /workgpfs/rech/ote/rote001/TMPDIR_NACHOS12.L75-GADA03
++ [ 1 '=' 1 ]
++ LookInNamelist cn_icerst_in namelist_ice.1
++ [ 2 '=' 2 ]
++ znamelist=namelist_ice.1
++ tr -d $'\''
++ tr -d '"'
++ eval grep -e cn_icerst_in namelist_ice.1
++ grep -e cn_icerst_in namelist_ice.1
++ awk ' {if ( $1 == str ) print $3 }' str=cn_icerst_in
++ sed -e 's/=/  = /'
++ ICE_RST_IN=restart_ice
++ LookInNamelist cn_icerst_out namelist_ice.1
++ [ 2 '=' 2 ]
++ znamelist=namelist_ice.1
++ eval grep -e cn_icerst_out namelist_ice.1
++ grep -e cn_icerst_out namelist_ice.1
++ tr -d $'\''
++ tr -d '"'
++ awk ' {if ( $1 == str ) print $3 }' str=cn_icerst_out
++ sed -e 's/=/  = /'
++ ICE_RST_OUT=restart_ice
++ mktarrst restart_ice restart_ice _v2
++ echo '   *** making tar restart file for restart_ice_v2 '
+   *** making tar restart file for restart_ice_v2 
++ MAXTARSIZ=40000000000
+ end of restart tarfiles .
++ [ 0 '=' 1 ]
++ cd -
+/workgpfs/rech/ote/rote001/TMPDIR_NACHOS12.L75-GADA03
++ cd /workgpfs/rech/ote/rote001/NACHOS12.L75/NACHOS12.L75-GADA03-R
++ expatrie_res restart_ice_v2.1.tar.1 /workgpfs/rech/ote/rote001/NACHOS12.L75/NACHOS12.L75-GADA03-R restart_ice_v2.1.tar.1 /workgpfs/rech/ote/rote001/NACHOS12.L75/NACHOS12.L75-GADA03-R
++ mfput restart_ice_v2.1.tar.1 /workgpfs/rech/ote/rote001/NACHOS12.L75/NACHOS12.L75-GADA03-R/restart_ice_v2.1.tar.1
+ mkdir /workgpfs : Permission denied 
+
+
+I - Your file has been saved in : /tmpgpfs2/MF/rote001/restart_ice_v2.1.tar.1.ada333.0712_170026_18943
+I - Please contact IDRIS User Support for more information.
+
++ [ 0 '=' 1 ]
++ cd /workgpfs/rech/ote/rote001/TMPDIR_NACHOS12.L75-GADA03
++ [ 0 '=' 1 ]
++ cd /workgpfs/rech/ote/rote001/TMPDIR_NACHOS12.L75-GADA03
++ [ 0 '=' 1 ]
++ [ 0 '=' 1 ]
++ [ 0 '=' 1 ]
++ touch RST_DONE.1

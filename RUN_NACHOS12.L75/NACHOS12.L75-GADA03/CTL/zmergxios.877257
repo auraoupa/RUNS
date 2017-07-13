@@ -1,0 +1,13 @@
+(load) netcdf seq 4.1.3
+(load) nco version 4.4.2
+(load) ncview version 2.1.2
+(load) ncar version 6.1
+(load) hdf5 seq 1.8.9
+	------------------------------------------------
+	Loading the NEMODRAK 4.0 environment 
+	------------------------------------------------
+
+ATTENTION: 0031-408  0 tasks allocated by Resource Manager, continuing...
+ERROR: 0031-028  pm_mgr_handle; can't send a signal message to remote nodes
+ERROR: 0031-619  Success
+ERROR: 0031-618  The following nodes were not contacted:
