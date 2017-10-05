@@ -12,7 +12,7 @@
       . /scratch/cnt0024/hmg2840/albert7a/DEV/RUN_TOOLS/function_3.2_all.ksh
          DDIR=/scratch/cnt0024/hmg2840/albert7a
          zXIOS=/scratch/cnt0024/hmg2840/albert7a/NACHOS12.L75-MAA09-XIOS.1
-         WKDIR=$zXIOS/WRK.37926
+         WKDIR=$zXIOS/WRK.11976
          mkdir -p $WKDIR
          cd $WKDIR
          mergeprog=mergefile_mpp4.exe

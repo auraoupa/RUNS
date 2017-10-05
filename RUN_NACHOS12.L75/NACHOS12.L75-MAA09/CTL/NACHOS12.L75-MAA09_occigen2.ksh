@@ -7,7 +7,7 @@
 #SBATCH -J nemo_occigen2
 #SBATCH -e nemo_occigen2.e%j
 #SBATCH -o nemo_occigen2.o%j
-#SBATCH --time=10:00:00
+#SBATCH --time=15:00:00
 #SBATCH --exclusive
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=$MAILT

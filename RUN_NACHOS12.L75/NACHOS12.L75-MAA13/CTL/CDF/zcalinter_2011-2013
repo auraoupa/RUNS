@@ -1,0 +1,21 @@
+#!/bin/ksh
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --ntasks-per-node=24
+#SBATCH --constraint=HSW24
+#SBATCH --threads-per-core=1
+#SBATCH -J zint_2011-2013
+#SBATCH -e zint_2011-2013.e%j
+#SBATCH -o zint_2011-2013.o%j
+#SBATCH --time=5:00:00
+#SBATCH --exclusiv
+
+
+ulimit -s unlimited
+CTL_DIR=/scratch/cnt0024/hmg2840/albert7a/WRUN_NACHOS12.L75/NACHOS12.L75-MAA13/CTL/CDF
+cd $CTL_DIR
+. ./config_moy.ksh
+. ./function_moy.ksh
+
+interannual 2011 2013
+

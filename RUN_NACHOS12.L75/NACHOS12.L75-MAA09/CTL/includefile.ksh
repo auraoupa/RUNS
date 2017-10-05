@@ -146,4 +146,4 @@ AGRIF_FIXED_GRID=AGRIF_FixedGrids.in                  ; OPA_AGRIF_FIXED_GRID=AGR
 
 # Control parameters
 # -----------------
-MAXSUB=1                 # resubmit job till job $MAXSUB
+MAXSUB=8                 # resubmit job till job $MAXSUB

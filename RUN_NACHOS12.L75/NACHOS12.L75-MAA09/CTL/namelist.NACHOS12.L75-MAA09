@@ -139,7 +139,7 @@
    rn_e3zps_rat=    0.2    !  rn_e3zps_min and rn_e3zps_rat*e3t, with 0<rn_e3zps_rat<1
                            !
 !  rn_rdt      = 4800.     !  time step for the dynamics (and tracer if nn_acc=0)
-   rn_rdt      = 480.       !  time step for the dynamics (and tracer if nn_acc=0)
+   rn_rdt      = 300.       !  time step for the dynamics (and tracer if nn_acc=0)
    rn_atfp     =    0.1    !  asselin time filter parameter
    ln_crs      = .false.      !  Logical switch for coarsening module
    jphgr_msh   =       0               !  type of horizontal mesh
